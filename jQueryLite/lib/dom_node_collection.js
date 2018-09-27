@@ -19,13 +19,18 @@ class DOMNodeCollection {
 
   append(arg) {
     if (arg instanceof DOMNodeCollection) {
-      console.log('yo');
       for (let i = 0; i < this.array.length; i++) {
-        console.log(arg.array.length);
         for (let j = 0; j < arg.array.length; j++) {
-          console.log("hi");
           this.array[i].innerHTML += arg.array[j].outerHTML ;
         }
+      }
+    } else if (arg instanceof HTMLElement){
+      for (let i = 0; i < this.array.length; i++) {
+        this.array[i].innerHTML += arg.outerHTML ;
+      }
+    } else {
+      for (let i = 0; i < this.array.length; i++) {
+        this.array[i].innerHTML += arg;
       }
     }
   }
