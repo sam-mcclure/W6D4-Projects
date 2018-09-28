@@ -12,3 +12,5 @@ $l = function l (arg) {
   }
 
 };
+
+window.el = document.getElementById("list1");li = $l(el); ul = $l('ul'); ul.attr("id","whatsup");
